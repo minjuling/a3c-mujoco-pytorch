@@ -1,0 +1,21 @@
+{
+    "os": "macOS-10.16-x86_64-i386-64bit",
+    "python": "3.8.12",
+    "heartbeatAt": "2022-06-24T15:26:41.554506",
+    "startedAt": "2022-06-24T15:26:40.382288",
+    "docker": null,
+    "cpu_count": 8,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "<python with no main file>",
+    "git": {
+        "remote": "https://github.com/minjuling/a3c-mujoco-pytorch.git",
+        "commit": "733be2ce2f5ecbf6c37817becf77bc31a2c0f65e"
+    },
+    "email": null,
+    "root": "/Users/minjuling/Documents/1-1/RL/a3c-mujoco-pytorch",
+    "host": "minjuling-ui-MacBookPro.local",
+    "username": "minjuling",
+    "executable": "/Users/minjuling/opt/anaconda3/envs/pytorch3.8/bin/python"
+}

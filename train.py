@@ -29,6 +29,7 @@ def train(rank, cfg, shared_model, exp_time):
 
     # model
     model = ActorCritic(mujoco.env.observation_space.shape[0], mujoco.env.action_space.shape[0])
+    print("action_space", mujoco.env.action_space.shape[0])
     model.train()
 
     # optimizer
@@ -61,6 +62,7 @@ def train(rank, cfg, shared_model, exp_time):
 
         for step in range(cfg.num_steps):
             value, mu, sigma = model(state.unsqueeze(0).float())
+            print( value, mu, sigma)
 
             # action select
             action_dist = dist.normal.Normal(mu, sigma)
@@ -113,5 +115,6 @@ def train(rank, cfg, shared_model, exp_time):
         (policy_loss + value_loss).backward()
         torch.nn.utils.clip_grad_norm(model.parameters(), 40)
         for param, shared_param in zip(model.parameters(), shared_model.parameters()):
-            shared_param._grad = param.grad
+            if param.grad != None:
+                shared_param._grad = param.grad
         optimizer.step()
