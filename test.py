@@ -58,15 +58,8 @@ def test(rank, cfg, shared_model, exp_time):
         step_len += 1
         if done: 
             model.load_state_dict(shared_model.state_dict())
-            cx = torch.zeros(1,128)
-            hx = torch.zeros(1,128)
-        else:
-            cx = cx.data
-            hx = hx.data
 
-        value, mu, sigma, (hx, cx) = model(
-            (state.unsqueeze(0).float(), (hx, cx))
-        )
+        value, mu, sigma = model(state.unsqueeze(0).float())
 
         # action select
         action_dist = dist.normal.Normal(mu, sigma)

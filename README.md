@@ -30,12 +30,12 @@ config에서 hyper param 수정
 ---
 - 멀티 프로세싱을 위해 참고
 
-https://pytorch.org/docs/stable/notes/multiprocessing.html
+  - https://pytorch.org/docs/stable/notes/multiprocessing.html
 
 - 참고 깃허브 
 
-https://github.com/ikostrikov/pytorch-a3c.git
+  - https://github.com/ikostrikov/pytorch-a3c.git
 
-https://github.com/andrewliao11/pytorch-a3c-mujoco.git
+  - https://github.com/andrewliao11/pytorch-a3c-mujoco.git
 
-https://github.com/MorvanZhou/pytorch-A3C.git
+  - https://github.com/MorvanZhou/pytorch-A3C.git

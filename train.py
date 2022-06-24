@@ -53,12 +53,6 @@ def train(rank, cfg, shared_model, exp_time):
         step_len += 1
         # 새로운 에피소드 마다 shared model 불러옴
         model.load_state_dict(shared_model.state_dict())
-        if done: 
-            cx = torch.zeros(1,128)
-            hx = torch.zeros(1,128)
-        else:
-            cx = cx.data
-            hx = hx.data
 
         values = []
         log_probs = []
@@ -66,8 +60,7 @@ def train(rank, cfg, shared_model, exp_time):
         entropies = []
 
         for step in range(cfg.num_steps):
-            value, mu, sigma, (hx, cx) = model(
-                (state.unsqueeze(0).float(), (hx, cx)))
+            value, mu, sigma = model(state.unsqueeze(0).float())
 
             # action select
             action_dist = dist.normal.Normal(mu, sigma)
@@ -95,7 +88,7 @@ def train(rank, cfg, shared_model, exp_time):
         
         R = 0
         if not done:
-            value, _, _, _ = model((state.unsqueeze(0).float(), (hx, cx)))
+            value, _, _ = model(state.unsqueeze(0).float())
             R = value.data
         
         values.append(R)
@@ -122,7 +115,3 @@ def train(rank, cfg, shared_model, exp_time):
         for param, shared_param in zip(model.parameters(), shared_model.parameters()):
             shared_param._grad = param.grad
         optimizer.step()
-
-
-
-

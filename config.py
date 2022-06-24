@@ -1,6 +1,12 @@
 class Config(object):
     mode = 'train'
-    env_name = 'Hopper-v1' # Hopper-v1
+    env_name = 'InvertedPendulum-v1'
+    # space: (state, action)
+    # InvertedPendulum-v1 (4,3)
+    # Swimmer-v4 (8,2)
+    # Hopper-v4 (11,3)
+    # Ant-v4 (27, 8)
+    # Humanoid-v4 (376, 17)
     cuda_num = None # no cuda -> None
     num_processes = 16
     lr = 1e-4
