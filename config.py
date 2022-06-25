@@ -1,6 +1,6 @@
 class Config(object):
     mode = 'train'
-    env_name = 'Hopper-v1'
+    env_name = 'Ant-v1'
     # space: (state, action)
     # InvertedPendulum-v1 (4,3)
     # Swimmer-v4 (8,2)

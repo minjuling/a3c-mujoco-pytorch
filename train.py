@@ -74,6 +74,7 @@ def train(rank, cfg, shared_model, exp_time):
             # env step
             state, reward, done, _ = mujoco.env.step(action.numpy())
             done = done or step_len >= cfg.max_step_len
+            reward = max(min(reward, 1000), -100)
 
             state = torch.from_numpy(state) # s'
             values.append(value) # s 에서의 v값
