@@ -62,7 +62,7 @@ def train(rank, cfg, shared_model, exp_time):
 
         for step in range(cfg.num_steps):
             value, mu, sigma = model(state.unsqueeze(0).float())
-            print( value, mu, sigma)
+            # print( value, mu, sigma)
 
             # action select
             action_dist = dist.normal.Normal(mu, sigma)

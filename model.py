@@ -12,6 +12,8 @@ class ActorCritic(torch.nn.Module):
 
 
         self.linear2 = nn.Linear(256, 128)
+        self.layer_norm2 = nn.LayerNorm(128)
+
 
         self.critic_linear = nn.Linear(128, 1)
         self.actor_linear = nn.Linear(128, action_space)
@@ -23,5 +25,7 @@ class ActorCritic(torch.nn.Module):
         x = F.relu(x)
         x = x.view(-1, 256)
         x = self.linear2(x)
+        x = self.layer_norm2(x)
+        x = F.relu(x)
         return self.critic_linear(x), self.actor_linear(x), F.softplus(self.sigma_layer(x))
 

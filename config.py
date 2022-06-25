@@ -8,7 +8,7 @@ class Config(object):
     # Ant-v4 (27, 8)
     # Humanoid-v4 (376, 17)
     cuda_num = None # no cuda -> None
-    num_processes = 2
+    num_processes = 8
     lr = 1e-4
     memory_size = 100000
     epsilon = 1
