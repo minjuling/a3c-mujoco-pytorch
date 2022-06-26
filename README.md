@@ -13,35 +13,38 @@ python main.py
 - 사용한 Mujoco Environment: 
   - InvertedPendulum-v1
   
-    <img src="./image/img1.png" width="200" height="400"/>
+    <img src="./image/img1.png" width="400" height="400"/>
     
     - observation shape: (4[-inf~inf],)
     - action space: (1[-3~3],)
 
   - Swimmer-v4
   
-    ![img2](./image/img2.png)
+    <img src="./image/img2.png" width="400" height="400"/>
+    
     
     - observation shape: (8[-inf~inf],)
     - action space: (2[-1~1],)
 
   - Hopper-v1
   
-    ![img3](./image/img3.png)
+    <img src="./image/img3.png" width="400" height="400"/>
+    
     
     - observation shape: (11[-inf~inf],)
     - action space: (3[-1~1],)
 
   - Ant-v4
-  
-    ![img4](./image/img4.png)
+ 
+    <img src="./image/img4.png" width="400" height="400"/>
     
     - observation shape: (27[-inf~inf],)
     - action space: (8[-1~1],)
 
   - Humanoid-v1
   
-    ![img5](./image/img5.png)
+    <img src="./image/img5.png" width="400" height="400"/>
+
     
     - observation shape: (376[-inf~inf],)
     - action space: (1[-0.4~0.4],)
@@ -52,52 +55,52 @@ python main.py
   - InvertedPendulum
     - reward
     
-    ![out1](./image/out1.png)
+    <img src="./image/out1.png" width="400" height="400"/>
     
     - loss
     
-    ![out2](./image/out2.png)
-
+    <img src="./image/out2.png" width="400" height="800"/>
+    
+    
 
   - Swimmer
     - reward
     
-    ![out3](./image/out3.png)
+    <img src="./image/out3.png" width="400" height="400"/>
     
     - loss
     
-    ![out4](./image/out4.png)
+    <img src="./image/out4.png" width="400" height="800"/>
   
   
   - Hopper
     - reward
     
-    ![out7](./image/out7.png)
+    <img src="./image/out7.png" width="400" height="400"/>
     
     - loss
     
-    ![out8](./image/out8.png)
+    <img src="./image/out8.png" width="400" height="800"/>
 
 
   - Ant
-  
     - reward
     
-    ![out5](./image/out5.png)
-   
+    <img src="./image/out4.png" width="400" height="400"/>
+    
     - loss
     
-    ![out6](./image/out6.png)
+    <img src="./image/out5.png" width="400" height="800"/>
     
   
   - Humanoid
     - reward
     
-    ![out9](./image/out9.png)
-  
+    <img src="./image/out9.png" width="400" height="400"/>
+    
     - loss
     
-    ![out10](./image/out10.png)
+    <img src="./image/out10.png" width="400" height="800"/>
     
 
 - 하이퍼파라미터
