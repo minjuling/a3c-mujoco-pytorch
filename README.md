@@ -8,8 +8,20 @@ python main.py
 2. config에서 hyper param 수정
 
 
+---
+## ⚪️Report
+- 스코어 비교하는 그래프 넣기
+- 하이퍼파라미터 꼭 적기 (optimization 포함)
+- input 처리 내용 반드시 넣기
+- input state 몇개가지고 하는지 state representation 명시
+- network 명시
+- output action - 액션 2번 줬는지 3번 줬는지 명시, policy gradient 쓴 사람은 확률 어떻게 했는지 명시
+- 몇번 step 하고 global update 했는지 설명
+- agent 16개 
 
 ---
+
+## ⚪️ToDo
 
 - [x] env: mujoco
 - [x] model
@@ -21,18 +33,10 @@ python main.py
 - [x] logging(wandb)
   - [ ] model 보여주기
   - [ ] cfg 보여주기
-
 ---
-- 스코어 비교하는 그래프 넣기
-- 하이퍼파라미터 꼭 적기 (optimization 포함)
-- input 처리 내용 반드시 넣기
-- input state 몇개가지고 하는지 state representation 명시
-- network 명시
-- output action - 액션 2번 줬는지 3번 줬는지 명시, policy gradient 쓴 사람은 확률 어떻게 했는지 명시
-- 몇번 step 하고 global update 했는지 설명
-- agent 16개 
 
----
+## ⚪️참고
+
 - 멀티 프로세싱을 위해 참고
 
   - https://pytorch.org/docs/stable/notes/multiprocessing.html
