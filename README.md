@@ -1,16 +1,24 @@
 # a3c-mujoco-pytorch
 
+
 1. 실행
 ```python
 python main.py
 ```
 
+
 2. config에서 hyper param 수정
 
 
+
 ---
+
+
+
 ## ⚪️ Report
+
 - 사용한 Mujoco Environment: 
+
   - InvertedPendulum-v1
   
     <img src="./image/img1.png" width="400" height="400"/>
@@ -18,21 +26,22 @@ python main.py
     - observation shape: (4[-inf~inf],)
     - action space: (1[-3~3],)
 
+
   - Swimmer-v4
   
-    <img src="./image/img2.png" width="400" height="400"/>
-    
+    <img src="./image/img2.png" width="400" height="400"/>    
     
     - observation shape: (8[-inf~inf],)
     - action space: (2[-1~1],)
 
+
   - Hopper-v1
   
     <img src="./image/img3.png" width="400" height="400"/>
-    
-    
+        
     - observation shape: (11[-inf~inf],)
     - action space: (3[-1~1],)
+
 
   - Ant-v4
  
@@ -41,13 +50,14 @@ python main.py
     - observation shape: (27[-inf~inf],)
     - action space: (8[-1~1],)
 
+
   - Humanoid-v1
   
     <img src="./image/img5.png" width="400" height="400"/>
 
-    
     - observation shape: (376[-inf~inf],)
     - action space: (1[-0.4~0.4],)
+
 
 
 - score
@@ -62,7 +72,6 @@ python main.py
     <img src="./image/out2.png" width="400" height="800"/>
     
     
-
   - Swimmer
     - reward
     
@@ -103,6 +112,7 @@ python main.py
     <img src="./image/out10.png" width="400" height="800"/>
     
 
+
 - 하이퍼파라미터
   ```
   > learning_rate = 1e-4
@@ -116,9 +126,9 @@ python main.py
   
   ```
   
-  
-- network
 
+
+- network
 
   ![net](./image/net.png)
 
@@ -159,7 +169,11 @@ python main.py
   특히 Ant 같은 경우에는 점점 마이너스 리워드를 받는 모습을 볼 수 있었다. 이를 위해 reward를 -100 ~ 1000으로 스케일링도 해보았지만 학습이 되지 않았다.
   네트워크가 얇아서 복잡한 문제는 풀지 못했던 것도 있는 것 같다.
 
+
+
 ---
+
+
 
 ## ⚪️ ToDo
 
@@ -173,7 +187,12 @@ python main.py
 - [x] logging(wandb)
   - [ ] model 보여주기
   - [ ] cfg 보여주기
+
+
+
 ---
+
+
 
 ## ⚪️ 참고
 
