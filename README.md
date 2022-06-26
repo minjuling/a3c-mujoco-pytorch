@@ -11,16 +11,16 @@ python main.py
 
 ---
 
--[ x] env: mujoco
--[ x] model
--[ x] simulate
--[ x] test
--[ x] train: 
-  -[ x] loss에 entropy항 추가해서 sigma 작게 나올 수 있게 함.
-  -[ x] train시 lock이 있을 필요가 없음. - mutex 쓰면 느려지고, 에이전트들도 가끔씩 업데이트 하기 때문에 겹칠일 없고 겹치더라도 크게 영향 주진 않음.
--[ x] logging(wandb)
-  -[ ] model 보여주기
-  -[ ] cfg 보여주기
+- [x] env: mujoco
+- [x] model
+- [x] simulate
+- [x] test
+- [x] train: 
+  - [x] loss에 entropy항 추가해서 sigma 작게 나올 수 있게 함.
+  - [x] train시 lock이 있을 필요가 없음. - mutex 쓰면 느려지고, 에이전트들도 가끔씩 업데이트 하기 때문에 겹칠일 없고 겹치더라도 크게 영향 주진 않음.
+- [x] logging(wandb)
+  - [ ] model 보여주기
+  - [ ] cfg 보여주기
 
 ---
 - 스코어 비교하는 그래프 넣기
