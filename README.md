@@ -17,11 +17,11 @@ python main.py
 
 ## ⚪️ Report
 
-- 사용한 Mujoco Environment: 
+### 사용한 Mujoco Environment: 
 
   - InvertedPendulum-v1
   
-    <img src="./image/img1.png" width="400" height="400"/>
+    <img src="./image/img1.png" width="300" height="300"/>
     
     - observation shape: (4[-inf~inf],)
     - action space: (1[-3~3],)
@@ -29,7 +29,7 @@ python main.py
 
   - Swimmer-v4
   
-    <img src="./image/img2.png" width="400" height="400"/>    
+    <img src="./image/img2.png" width="300" height="300"/>    
     
     - observation shape: (8[-inf~inf],)
     - action space: (2[-1~1],)
@@ -37,7 +37,7 @@ python main.py
 
   - Hopper-v1
   
-    <img src="./image/img3.png" width="400" height="400"/>
+    <img src="./image/img3.png" width="300" height="300"/>
         
     - observation shape: (11[-inf~inf],)
     - action space: (3[-1~1],)
@@ -45,7 +45,7 @@ python main.py
 
   - Ant-v4
  
-    <img src="./image/img4.png" width="400" height="400"/>
+    <img src="./image/img4.png" width="300" height="300"/>
     
     - observation shape: (27[-inf~inf],)
     - action space: (8[-1~1],)
@@ -53,67 +53,68 @@ python main.py
 
   - Humanoid-v1
   
-    <img src="./image/img5.png" width="400" height="400"/>
+    <img src="./image/img5.png" width="300" height="300"/>
 
     - observation shape: (376[-inf~inf],)
     - action space: (1[-0.4~0.4],)
 
 
 
-- score
+### score
 
   - InvertedPendulum
     - reward
     
-    <img src="./image/out1.png" width="400" height="400"/>
+    <img src="./image/out1.png" width="300" height="300"/>
     
     - loss
     
-    <img src="./image/out2.png" width="400" height="800"/>
+    <img src="./image/out2.png" width="300" height="600"/>
     
     
   - Swimmer
     - reward
     
-    <img src="./image/out3.png" width="400" height="400"/>
+    <img src="./image/out3.png" width="300" height="300"/>
     
     - loss
     
-    <img src="./image/out4.png" width="400" height="800"/>
+    <img src="./image/out4.png" width="300" height="600"/>
   
   
   - Hopper
     - reward
     
-    <img src="./image/out7.png" width="400" height="400"/>
+    <img src="./image/out7.png" width="300" height="300"/>
     
     - loss
     
-    <img src="./image/out8.png" width="400" height="800"/>
+    <img src="./image/out8.png" width="300" height="600"/>
 
 
   - Ant
     - reward
     
-    <img src="./image/out4.png" width="400" height="400"/>
+    <img src="./image/out4.png" width="300" height="300"/>
     
     - loss
     
-    <img src="./image/out5.png" width="400" height="800"/>
+    <img src="./image/out5.png" width="300" height="600"/>
     
   
   - Humanoid
     - reward
     
-    <img src="./image/out9.png" width="400" height="400"/>
+    <img src="./image/out9.png" width="300" height="300"/>
     
     - loss
     
-    <img src="./image/out10.png" width="400" height="800"/>
+    <img src="./image/out10.png" width="300" height="600"/>
     
 
 
-- 하이퍼파라미터
+### Hyperparameter
+
   ```
   > learning_rate = 1e-4
   > optimizer = Adam
@@ -128,13 +129,14 @@ python main.py
   
 
 
-- network
+### Network
 
   ![net](./image/net.png)
 
 
 
-- model input: 
+### Model Input: 
+
   - 각 env 마다 주어지는 observation을 그대로 사용
   - InvertedPendulum: (4[-inf~inf],)
   - Swimmer: (8[-inf~inf],)
@@ -144,7 +146,8 @@ python main.py
 
 
 
-- model output: 
+### Model Output: 
+
   - value 
   - 각 env 마다 주어지는 action 개수 만큼의 mu, sigma
   - InvertedPendulum: (1[-3~3],)
@@ -155,7 +158,8 @@ python main.py
 
 
 
-- action:
+### Action:
+
   - torch.distributions의 normal distribution 이용
   - model의 output인 mu와 sigma를 넣고 action space 개수 만큼 distribution 생성
   - 각 distribution에서 action 추출
@@ -163,7 +167,7 @@ python main.py
 
 
 
-- 분석
+### 분석
 
   InvertedPendulum을 빼고 모든 실험이 학습이 안됐다.
   특히 Ant 같은 경우에는 점점 마이너스 리워드를 받는 모습을 볼 수 있었다. 이를 위해 reward를 -100 ~ 1000으로 스케일링도 해보았지만 학습이 되지 않았다.
