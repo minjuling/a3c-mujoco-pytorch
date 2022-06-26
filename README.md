@@ -12,61 +12,93 @@ python main.py
 ## ⚪️ Report
 - 사용한 Mujoco Environment: 
   - InvertedPendulum-v1
-    ![img1](./image/img1.png)
+  
+    <img src="./image/img1.png" width="200" height="400"/>
+    
     - observation shape: (4[-inf~inf],)
     - action space: (1[-3~3],)
 
   - Swimmer-v4
+  
     ![img2](./image/img2.png)
+    
     - observation shape: (8[-inf~inf],)
     - action space: (2[-1~1],)
 
   - Hopper-v1
+  
     ![img3](./image/img3.png)
+    
     - observation shape: (11[-inf~inf],)
     - action space: (3[-1~1],)
 
   - Ant-v4
+  
     ![img4](./image/img4.png)
+    
     - observation shape: (27[-inf~inf],)
     - action space: (8[-1~1],)
 
   - Humanoid-v1
+  
     ![img5](./image/img5.png)
+    
     - observation shape: (376[-inf~inf],)
     - action space: (1[-0.4~0.4],)
 
 
 - score
+
   - InvertedPendulum
     - reward
+    
     ![out1](./image/out1.png)
+    
     - loss
+    
     ![out2](./image/out2.png)
+
 
   - Swimmer
     - reward
+    
     ![out3](./image/out3.png)
+    
     - loss
+    
     ![out4](./image/out4.png)
+  
   
   - Hopper
     - reward
+    
     ![out7](./image/out7.png)
+    
     - loss
+    
     ![out8](./image/out8.png)
 
+
   - Ant
+  
     - reward
+    
     ![out5](./image/out5.png)
+   
     - loss
+    
     ![out6](./image/out6.png)
+    
   
   - Humanoid
     - reward
+    
     ![out9](./image/out9.png)
+  
     - loss
+    
     ![out10](./image/out10.png)
+    
 
 - 하이퍼파라미터
   ```
@@ -80,8 +112,14 @@ python main.py
   > agent 16개 이용
   
   ```
+  
+  
 - network
+
+
   ![net](./image/net.png)
+
+
 
 - model input: 
   - 각 env 마다 주어지는 observation을 그대로 사용
@@ -90,6 +128,8 @@ python main.py
   - Hopper: (11[-inf~inf],)
   - Ant: (27[-inf~inf],)
   - Humanoid: (376[-inf~inf],)
+
+
 
 - model output: 
   - value 
@@ -100,13 +140,18 @@ python main.py
   - Ant: (8[-1~1],)
   - Humanoid: (1[-0.4~0.4],)
 
+
+
 - action:
   - torch.distributions의 normal distribution 이용
   - model의 output인 mu와 sigma를 넣고 action space 개수 만큼 distribution 생성
   - 각 distribution에서 action 추출
   - 매 env step마다 action 추출
 
+
+
 - 분석
+
   InvertedPendulum을 빼고 모든 실험이 학습이 안됐다.
   특히 Ant 같은 경우에는 점점 마이너스 리워드를 받는 모습을 볼 수 있었다. 이를 위해 reward를 -100 ~ 1000으로 스케일링도 해보았지만 학습이 되지 않았다.
   네트워크가 얇아서 복잡한 문제는 풀지 못했던 것도 있는 것 같다.
